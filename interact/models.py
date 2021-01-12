@@ -12,7 +12,7 @@ class Interaction(models.Model):
     experimental = models.IntegerField(default=0)
     database = models.IntegerField(default=0)
     textmining = models.IntegerField(default=0)
-    combined_score = models.IntegerField(default=0) 
-
+    combined_score = models.IntegerField(default=0)
+    
     def __int__(self):
         return self.id  
