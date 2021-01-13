@@ -7,10 +7,35 @@
 	}
 
 	input{
+		width:25%;				
+		vertical-align: middle;		
+	}
+
+	button{
+		width:100%;				
+		border-radius: 3px;
+		vertical-align: middle;			  					
+	}
+
+	.center {
+  		margin: auto;  		
+  		border: 2px solid green;
+  		padding: 10px;
+	}
+
+	select{
+		width: 11%;		
+		margin: 8px 0;			
+		vertical-align: middle;		
+	}
+	
+	form{
+		vertical-align: middle;		
+		
+	}
+
+	div{
 		width: 100%;
-		padding: 12px 20px;
-		margin: 8px 0;
-		box-sizing: border-box;
 	}
 
 	input::placeholder {
@@ -26,6 +51,15 @@
 		margin: 20px auto;
 		padding:20px;
 		background-color: #fff;
+		border-radius: 3px;
+		box-shadow: 6px 2px 30px 0px rgba(0,0,0,0.75);
+	}
+
+	.filterarea{
+		width:1120px;
+		margin: 20px auto;
+		padding:20px;
+		background-color: rgb(151, 169, 196);
 		border-radius: 3px;
 		box-shadow: 6px 2px 30px 0px rgba(0,0,0,0.75);
 	}
@@ -47,6 +81,125 @@
 
 </style>
 
+<form name="filterform" method="GET" enctype="multipart/form-data"  >
+	{% csrf_token %}	
+	<div class="center-column">
+	<div>
+	Protein: 
+	<input type="text" name="protein" value="{{searched_protein}}" >
+	<br/>
+	<button type="submit" class="center">Search</button>	
+	</div>
+	</div>
+	
+	<div class="center-column">
+	<div>
+		Neighbourhood:
+		<select id="cs" name="neighborhood_t">
+			<option value="0" {% if neighborhood_type == "0" %}selected{% endif %}></option>
+			<option value="1" {% if neighborhood_type == "1" %}selected{% endif %}>Less Than</option>
+			<option value="2" {% if neighborhood_type == "2" %}selected{% endif %}>Equal To</option>
+			<option value="3" {% if neighborhood_type == "3" %}selected{% endif %}>More Than</option>		
+			<option value="4" {% if neighborhood_type == "4" %}selected{% endif %}>Not Equal To</option>		
+		  </select>
+		  <input type="input" name="neighborhood"  value="{{neighborhood_search}}" >
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		Fusion:
+		<select id="cs" name="fusion_t">
+			<option value="0" {% if fusion_type == "0" %}selected{% endif %}></option>
+			<option value="1" {% if fusion_type == "1" %}selected{% endif %}>Less Than</option>
+			<option value="2" {% if fusion_type == "2" %}selected{% endif %}>Equal To</option>
+			<option value="3" {% if fusion_type == "3" %}selected{% endif %}>More Than</option>
+			<option value="4" {% if fusion_type == "4" %}selected{% endif %}>Not Equal To</option>		
+		  </select>
+		  <input type="input" name="fusion"  value="{{fusion_search}}" >
+	</div>
+
+
+	<div>
+		Cooccurance:
+		<select id="cs" name="cooccurance_t">
+			<option value="0" {% if cooccurance_type == "0" %}selected{% endif %}></option>
+			<option value="1" {% if cooccurance_type == "1" %}selected{% endif %}>Less Than</option>
+			<option value="2" {% if cooccurance_type == "2" %}selected{% endif %}>Equal To</option>
+			<option value="3" {% if cooccurance_type == "3" %}selected{% endif %}>More Than</option>		
+			<option value="4" {% if cooccurance_type == "4" %}selected{% endif %}>Not Equal To</option>
+		  </select>
+		  <input type="input" name="cooccurance"  value="{{cooccurance_search}}" >
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		Coexpression:
+		<select id="cs" name="coexpression_t">
+			<option value="0" {% if coexpression_type == "0" %}selected{% endif %}></option>
+			<option value="1" {% if coexpression_type == "1" %}selected{% endif %}>Less Than</option>
+			<option value="2" {% if coexpression_type == "2" %}selected{% endif %}>Equal To</option>
+			<option value="3" {% if coexpression_type == "3" %}selected{% endif %}>More Than</option>		
+			<option value="4" {% if coexpression_type == "4" %}selected{% endif %}>Not Equal To</option>
+		  </select>
+		  <input type="input" name="coexpression"  value="{{coexpression_search}}" >
+		
+		
+	</div>
+
+
+
+
+
+
+	<div>		
+		Experimental:
+		<select id="cs" name="experimental_t">
+			<option value="0" {% if experimental_type == "0" %}selected{% endif %}></option>
+			<option value="1" {% if experimental_type == "1" %}selected{% endif %}>Less Than</option>
+			<option value="2" {% if experimental_type == "2" %}selected{% endif %}>Equal To</option>
+			<option value="3" {% if experimental_type == "3" %}selected{% endif %}>More Than</option>
+			<option value="4" {% if experimental_type == "4" %}selected{% endif %}>Not Equal To</option>		
+		  </select>
+		  <input type="input" name="experimental"  value="{{experimental_search}}" >
+		  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		  Database:
+		<select id="cs" name="database_t">
+			<option value="0" {% if database_type == "0" %}selected{% endif %}></option>
+			<option value="1" {% if database_type == "1" %}selected{% endif %}>Less Than</option>
+			<option value="2" {% if database_type == "2" %}selected{% endif %}>Equal To</option>
+			<option value="3" {% if database_type == "3" %}selected{% endif %}>More Than</option>
+			<option value="4" {% if database_type == "4" %}selected{% endif %}>Not Equal To</option>		
+		  </select>
+		  <input type="input" name="database"  value="{{database_search}}" >
+	</div>
+		
+
+
+
+
+
+
+	<div>
+	Textmining:
+	<select id="cs" name="textmining_t">
+		<option value="0" {% if textmining_type == "0" %}selected{% endif %}></option>
+		<option value="1" {% if textmining_type == "1" %}selected{% endif %}>Less Than</option>
+		<option value="2" {% if textmining_type == "2" %}selected{% endif %}>Equal To</option>
+		<option value="3" {% if textmining_type == "3" %}selected{% endif %}>More Than</option>		
+		<option value="4" {% if textmining_type == "4" %}selected{% endif %}>Not Equal To</option>		
+	  </select>
+	  <input type="input" name="textmining"  value="{{textmining_search}}" >
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	Combined Score:
+	<select id="cs" name="combined_score_t">
+		<option value="0" {% if combined_score_type == "0" %}selected{% endif %}></option>
+		<option value="1" {% if combined_score_type == "1" %}selected{% endif %}>Less Than</option>
+		<option value="2" {% if combined_score_type == "2" %}selected{% endif %}>Equal To</option>
+		<option value="3" {% if combined_score_type == "3" %}selected{% endif %}>More Than</option>		
+		<option value="4" {% if combined_score_type == "4" %}selected{% endif %}>Not Equal To</option>		
+	  </select>
+	  <input type="input" name="combined_score"  value="{{combined_score_search}}" >
+	</div>
+	<br/>
+	<button  type="submit" class="center">Filter</button>
+	<button  type="cancel" class="center">Clear</button>
+	</div>	
+</form>
+
 <div class="center-column">
 
 
@@ -55,8 +208,8 @@
 {% for interaction in interactions %}
     <div class="item-row">
 		<strong>
-		<span>Protien 1: {{interaction.protein1}}</span> &nbsp;&nbsp;&nbsp;
-		<span>Protien 2: {{interaction.protein2}}</span>    
+		<span>Protein 1: {{interaction.protein1}}</span> &nbsp;&nbsp;&nbsp;
+		<span>Protein 2: {{interaction.protein2}}</span>    
 		</strong>
 		<br/>
 		<span>Neighborhood: {{interaction.neighborhood}}</span> &nbsp;&nbsp;

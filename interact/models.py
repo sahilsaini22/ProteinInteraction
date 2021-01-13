@@ -15,4 +15,4 @@ class Interaction(models.Model):
     combined_score = models.IntegerField(default=0)
     
     def __int__(self):
-        return self.id  
+        return self.protein1  
