@@ -86,13 +86,9 @@
 	<div class="center-column">
 	<div>
 	Protein: 
-	<input type="text" name="protein" value="{{searched_protein}}" >
-	<br/>
-	<button type="submit" class="center">Search</button>	
-	</div>
+	<input type="text" name="protein" value="{{searched_protein}}" >	
 	</div>
 	
-	<div class="center-column">
 	<div>
 		Neighbourhood:
 		<select id="cs" name="neighborhood_t">
@@ -105,6 +101,7 @@
 		  <input type="input" name="neighborhood"  value="{{neighborhood_search}}" >
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		Fusion:
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		<select id="cs" name="fusion_t">
 			<option value="0" {% if fusion_type == "0" %}selected{% endif %}></option>
 			<option value="1" {% if fusion_type == "1" %}selected{% endif %}>Less Than</option>
@@ -116,8 +113,9 @@
 	</div>
 
 
-	<div>
+	<div>		
 		Cooccurance:
+		&nbsp;&nbsp;&nbsp;&nbsp;
 		<select id="cs" name="cooccurance_t">
 			<option value="0" {% if cooccurance_type == "0" %}selected{% endif %}></option>
 			<option value="1" {% if cooccurance_type == "1" %}selected{% endif %}>Less Than</option>
@@ -126,8 +124,9 @@
 			<option value="4" {% if cooccurance_type == "4" %}selected{% endif %}>Not Equal To</option>
 		  </select>
 		  <input type="input" name="cooccurance"  value="{{cooccurance_search}}" >
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		Coexpression:
+		&nbsp;&nbsp;&nbsp;
 		<select id="cs" name="coexpression_t">
 			<option value="0" {% if coexpression_type == "0" %}selected{% endif %}></option>
 			<option value="1" {% if coexpression_type == "1" %}selected{% endif %}>Less Than</option>
@@ -147,6 +146,7 @@
 
 	<div>		
 		Experimental:
+		&nbsp;&nbsp;&nbsp;&nbsp;
 		<select id="cs" name="experimental_t">
 			<option value="0" {% if experimental_type == "0" %}selected{% endif %}></option>
 			<option value="1" {% if experimental_type == "1" %}selected{% endif %}>Less Than</option>
@@ -157,6 +157,7 @@
 		  <input type="input" name="experimental"  value="{{experimental_search}}" >
 		  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		  Database:
+		  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		<select id="cs" name="database_t">
 			<option value="0" {% if database_type == "0" %}selected{% endif %}></option>
 			<option value="1" {% if database_type == "1" %}selected{% endif %}>Less Than</option>
@@ -175,6 +176,7 @@
 
 	<div>
 	Textmining:
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	<select id="cs" name="textmining_t">
 		<option value="0" {% if textmining_type == "0" %}selected{% endif %}></option>
 		<option value="1" {% if textmining_type == "1" %}selected{% endif %}>Less Than</option>
@@ -196,7 +198,7 @@
 	</div>
 	<br/>
 	<button  type="submit" class="center">Filter</button>
-	<button  type="cancel" class="center">Clear</button>
+	
 	</div>	
 </form>
 
