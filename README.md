@@ -20,10 +20,10 @@ This will sync the application with the database. To validate, in pgAdmin, you c
   
 Application Functonalities:
 1. Upload the Protein Intertaction Information<br/>
-  1. Click on the link to upload
-  2. Click on "Upload a file"
-  3. Browse the file 
-  4. Click in "Upload"
+  1.1. Click on the link to upload<br/>
+  1.2. Click on "Upload a file"<br/>
+  1.3. Browse the file <br/>
+  1.4. Click in "Upload"
   
   File Structure:
   The upload file should be a CSV file(without a header) with the following field sequence:<br/>
@@ -39,7 +39,7 @@ Application Functonalities:
   TEXTMINING
   
  2. Filter Interaction Data<br/>
-  1. Enter the filter criteria in the desired fields
-  2. Numeric fields have the option of filtering for more than, less than, equal to, not equal to the entered value
-  3. Click on "Filter"
+  2.1. Enter the filter criteria in the desired fields<br/>
+  2.2. Numeric fields have the option of filtering for more than, less than, equal to, not equal to the entered value<br/>
+  2.3. Click on "Filter"
     
