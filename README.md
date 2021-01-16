@@ -1,6 +1,6 @@
 # ProteinInteraction
 
-This application allows the user to upload protein related information in the form of a CSV file to a Postgresql database, and view and filter the interaction details based on the various parameters.
+This application allows the user to upload protein interaction related information in the form of a CSV file to a Postgresql database, and view and filter the interaction details based on the various parameters.
 
 
 How to run the application locally:
