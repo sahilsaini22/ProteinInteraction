@@ -9,7 +9,7 @@ How to run the application locally:
   1.1 Create a database 
 2. In ./interactions/setting.py, enter the database details in "DATABASES" section.
 3. In the terminal, run the following commands in order:
-    python manage.py makemigrations
+    python manage.py makemigrations<br/>
     python manage.py migrate
     
 This will sync the application with the database. To validate, in pgAdmin, you can view the application related table in "Databases/<Your_Database_Name>/Schemas/public/Tables/"
